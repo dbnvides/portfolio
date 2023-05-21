@@ -13,9 +13,6 @@ import { userData } from "@/utils/userData";
 
 //img
 import Person from "../../assets/person.png";
-import JuniorJobs from "../../assets/juniorJobs.png";
-import KenzieHub from "../../assets/KenzieHub.png";
-import Hamburgueria from "../../assets/hamburgueria.png";
 
 // Page Style
 import {
