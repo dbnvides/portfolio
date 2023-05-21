@@ -15,26 +15,64 @@ export const Header = styled("header", {
   },
 });
 
+export const SectionMe = styled("div", {
+  maxWidth: "100%",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  gap: "$2",
+});
+
 export const HeaderContent = styled("div", {
   maxWidth: "100%",
-  width: "36rem",
+  width: "100%",
   display: "flex",
   flexDirection: "column",
-  gap: "$2",
+});
+
+export const HeaderImage = styled("div", {
+  display: "flex",
+  width: "250px",
+  height: "250px",
+  border: "4px solid #ffffff",
+  borderRadius: "50%",
+  overflow: "hidden",
+
+  img: {
+    maxWidth: "100%",
+    transform: "scale(1.5)",
+  },
+
+  "@mobile": {
+    display: "none",
+  },
+});
+
+export const HeaderDescription = styled("div", {
+  width: "500px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 });
 
 export const HeaderButtonsArea = styled(Flex, {
   marginTop: "$2",
+  display: "flex",
+  alignSelf: "center",
+  marginLeft: "60px",
+  paddingTop: "20px",
+
   "@mobile": {
     flexDirection: "column",
     [`& ${Button}`]: {
       width: "100%",
     },
+    marginLeft: "0",
   },
 });
 
 export const StackSection = styled("section", {
-  backgroundColor: "$grey4",
+  backgroundColor: "$grey1",
   padding: "4rem 0 2rem 0",
 });
 
@@ -54,6 +92,7 @@ export const StackCards = styled("div", {
 
 export const ProjectsArea = styled("section", {
   padding: "4rem 0 8rem 0",
+  backgroundColor: "$grey1",
 });
 
 export const ProjectsAreaSocialMediaMessage = styled("aside", {
@@ -87,4 +126,12 @@ export const ProjectAreaWrapperColumns = styled(Flex, {
   "@mobile": {
     flexDirection: "column",
   },
+});
+
+export const PlusMoreProjects = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  alignItems: "center",
+  marginTop: "20px",
 });

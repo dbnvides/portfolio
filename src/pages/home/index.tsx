@@ -5,7 +5,7 @@ import { Button } from "@/styles/Buttons";
 
 // Components
 import { Stack } from "@/components/Stack";
-import { Project } from "@/components/Project";
+import { Project, ProjectDeploy } from "@/components/Project";
 
 // Data
 import { stackData } from "@/utils/stackData";
@@ -22,8 +22,12 @@ import {
   ProjectsAreaSocialMediaMessage,
   ProjectsAreaContent,
   ProjectAreaWrapperColumns,
+  HeaderImage,
+  HeaderDescription,
+  SectionMe,
+  PlusMoreProjects,
 } from "./style";
-
+import { FaGithub } from "react-icons/fa";
 
 export const Home = (): JSX.Element => {
   return (
@@ -31,16 +35,24 @@ export const Home = (): JSX.Element => {
       <Header>
         <Container>
           <HeaderContent>
-            <Text as="h1" type="heading1" color="grey5">
-              Criando experiências por meio da tecnologia{" "}
-            </Text>
-            <Text type="body1" color="grey6">
-              Sou estudante de programação na Kenzie Academy Brasil, participei
-              de diversos projetos resolvendo problemas de alto nível e
-              desenvolvendo habilidades
-            </Text>
+            <SectionMe>
+              <HeaderImage>
+                <img src="src/assets/person.png" alt="img" />
+              </HeaderImage>
+              <HeaderDescription>
+                <Text as="h2" type="heading2" color="grey5">
+                  Olá sou o Dionísio, e seja muito bem vindo(a)!
+                </Text>
+                <Text type="body1" color="grey6">
+                  Sou desenvolvedor full stack, este é o meu portfólio, onde você pode explorar
+                  todos os projetos que já realizei e estou desenvolvendo. Sinta-se à vontade para
+                  navegar e conhecer meu trabalho. Estou ansioso para compartilhar minhas
+                  habilidades e experiências com você. Puxe uma cadeira e aproveite!
+                </Text>
+              </HeaderDescription>
+            </SectionMe>
             <HeaderButtonsArea>
-              <Button as="a" href="#projetos">
+              <Button as="a" href="#projetos" type="icon">
                 Projetos
               </Button>
               <Button as="a" href="#tecnologias" type="btLink" color="grey5">
@@ -52,8 +64,8 @@ export const Home = (): JSX.Element => {
       </Header>
       <StackSection id="tecnologias">
         <Container>
-          <Text as="h4" type="heading3" color="grey1">
-            Ferramentas que domino
+          <Text as="h4" type="heading3" color="grey5">
+            Tecnologias
           </Text>
           <StackCards>
             {stackData.map((stack, index) => (
@@ -66,13 +78,13 @@ export const Home = (): JSX.Element => {
         <Container>
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey1">
+              <Text as="h2" type="heading4" color="grey5">
                 Vamos trocar uma ideia?
               </Text>
-              <Text as="p" type="body1" color="grey2">
-                No linkedIn sempre estou compartilhando meus processos diários
-                para desenvolver esses projetos e estou disposto a trocar
-                algumas ideias por lá
+              <Text as="p" type="body1" color="grey5">
+                No LinkedIn, ainda não compartilhei os projetos dos quais fiz parte, mas em breve
+                pretendo apresentar novos projetos que oferecem soluções para o dia a dia. Estou
+                sempre disponível para conversar e trocar ideias.
               </Text>
               <Button
                 type="primary"
@@ -84,17 +96,28 @@ export const Home = (): JSX.Element => {
               </Button>
             </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
-              <Text type="body1" color="grey2" css={{ marginBottom: "$2" }}>
+              <Text type="heading2" color="grey5" css={{ marginBottom: "$2" }}>
                 Projetos
               </Text>
-              <Text as="h3" type="heading2" color="grey1">
-                Originalidade e{" "}
-                <Text as="span" color="brand1" type="heading2">
-                  dedicação
-                </Text>{" "}
-                em cada detalhe
+              <ProjectDeploy />
+              <Text type="heading2" color="grey5" css={{ marginBottom: "$2" }}>
+                Projetos no repositório
               </Text>
               <Project />
+              <PlusMoreProjects>
+                <Text type="heading2" color="grey5" css={{ marginBottom: "$2" }}>
+                  Ver mais
+                </Text>
+                <Button
+                  type="icon"
+                  target="_blank"
+                  as="a"
+                  aria-label="Github"
+                  href={`https://github.com/${userData.githubUser}`}
+                >
+                  <FaGithub />
+                </Button>
+              </PlusMoreProjects>
             </ProjectsAreaContent>
           </ProjectAreaWrapperColumns>
         </Container>

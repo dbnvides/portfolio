@@ -4,6 +4,11 @@ import {
   ProjectStackTech,
   ProjectLink,
   ProjectLinks,
+  ProjectImage,
+  ProjectCard,
+  ProjectContent,
+  ProjectAreaButtons,
+  ProjectLinkDeploy,
 } from "./style";
 
 import { Text } from "@/styles/Text";
@@ -18,6 +23,7 @@ interface ReposType {
   description: string;
   git_url: string;
   homepage: string;
+  html_url: string;
 }
 
 export const Project = (): JSX.Element => {
@@ -26,12 +32,13 @@ export const Project = (): JSX.Element => {
   useEffect(() => {
     const fetchData = async () => {
       const data: Response = await fetch(
-        `https://api.github.com/users/${userData.githubUser}/repos`
-      )
+        `https://api.github.com/users/${userData.githubUser}/repos?sort=created&direction=desc`
+      );
 
       const json = await data.json();
 
-      setRepositories(json);
+      let recent = json.slice(0, 10);
+      setRepositories(recent);
 
       if (!data.ok) {
         throw data;
@@ -46,18 +53,15 @@ export const Project = (): JSX.Element => {
     <>
       {repositories?.map((repository) => (
         <ProjectWrapper key={repository.id}>
-          <Text
-            as="h2"
-            type="heading3"
-            css={{ marginBottom: "$3" }}
-            color="grey1"
-          >
+          <Text as="h2" type="heading3" css={{ marginBottom: "$3" }} color="grey5">
             {repository.name}
           </Text>
 
           {repository.language && (
             <ProjectStack>
-              <Text type="body2">Linguagem:</Text>
+              <Text type="body2" color="grey5">
+                Linguagem:
+              </Text>
               <ProjectStackTech>
                 <Text color="brand1" type="body2">
                   {repository.language}
@@ -66,11 +70,8 @@ export const Project = (): JSX.Element => {
             </ProjectStack>
           )}
 
-          <Text type="body1" color="grey2">
-            {repository.description}
-          </Text>
           <ProjectLinks>
-            <ProjectLink target="_blank" href={repository.git_url}>
+            <ProjectLink target="_blank" href={repository.html_url}>
               <FaGithub /> Github Code
             </ProjectLink>
             {repository.homepage && (
@@ -81,6 +82,79 @@ export const Project = (): JSX.Element => {
           </ProjectLinks>
         </ProjectWrapper>
       ))}
+    </>
+  );
+};
+
+export const ProjectDeploy = (): JSX.Element => {
+  return (
+    <>
+      <ProjectCard>
+        <ProjectImage>
+          <img src="src/assets/juniorJobs.png" alt="imagem do site" />
+        </ProjectImage>
+        <ProjectContent>
+          <h3>Junior Jobs</h3>
+          <p>
+            A aplicação acima tem como objetivo facilitar essa busca, tanto para novos
+            desenvolvedores quanto para empresas buscando novos colaboradores.{" "}
+          </p>
+          <ProjectAreaButtons>
+            <ProjectLinkDeploy target="_blank" href="https://junior-jobs-eta.vercel.app/">
+              Aplicação
+            </ProjectLinkDeploy>
+            <ProjectLink target="_blank" href="https://github.com/Project-Junior-Jobs/Junior-jobs">
+              <FaGithub />
+              Repositório
+            </ProjectLink>
+          </ProjectAreaButtons>
+        </ProjectContent>
+      </ProjectCard>
+      <ProjectCard>
+        <ProjectImage>
+          <img src="src/assets/KenzieHub.png" alt="imagem do site" />
+        </ProjectImage>
+        <ProjectContent>
+          <h3>KenzieHub</h3>
+          <p>
+            Aplicação voltada para desenvolvedores cujo o principal objetivo é anotar quais
+            tecnologias voce tem conhecimento e colocar qual o grau de conhecimento.{" "}
+          </p>
+          <ProjectAreaButtons>
+            <ProjectLinkDeploy target="_blank" href="https://react-kenziehub.vercel.app/login">
+              Aplicação
+            </ProjectLinkDeploy>
+            <ProjectLink target="_blank" href="https://github.com/Project-Junior-Jobs/Junior-jobs">
+              <FaGithub />
+              Repositório
+            </ProjectLink>
+          </ProjectAreaButtons>
+        </ProjectContent>
+      </ProjectCard>
+      <ProjectCard>
+        <ProjectImage>
+          <img src="src/assets/hamburgueria.png" alt="imagem do site" />
+        </ProjectImage>
+        <ProjectContent>
+          <h3>Hamburgueria</h3>
+          <p>
+            Aplicação voltado para compras de lanches e acompanhamentos, com sistemas de login e
+            registro, sistema de carrinho e filtro para buscar os lanches, totalmente responsivo.{" "}
+          </p>
+          <ProjectAreaButtons>
+            <ProjectLinkDeploy
+              target="_blank"
+              href="https://hamburgueria-2-0-azure.vercel.app/login"
+            >
+              Aplicação
+            </ProjectLinkDeploy>
+            <ProjectLink target="_blank" href="https://github.com/dbnvides/react-hamburgueria-v2">
+              <FaGithub />
+              Repositório
+            </ProjectLink>
+          </ProjectAreaButtons>
+        </ProjectContent>
+      </ProjectCard>
     </>
   );
 };
