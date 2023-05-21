@@ -91,7 +91,7 @@ export const ProjectDeploy = (): JSX.Element => {
     <>
       <ProjectCard>
         <ProjectImage>
-          <img src="../src/assets/juniorJobs.png" alt="imagem do site" />
+          <img src="./src/assets/juniorJobs.png" alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
           <h3>Junior Jobs</h3>
@@ -112,7 +112,7 @@ export const ProjectDeploy = (): JSX.Element => {
       </ProjectCard>
       <ProjectCard>
         <ProjectImage>
-          <img src="../src/assets/KenzieHub.png" alt="imagem do site" />
+          <img src="./src/assets/KenzieHub.png" alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
           <h3>KenzieHub</h3>
@@ -133,7 +133,7 @@ export const ProjectDeploy = (): JSX.Element => {
       </ProjectCard>
       <ProjectCard>
         <ProjectImage>
-          <img src="../src/assets/hamburgueria.png" alt="imagem do site" />
+          <img src="./src/assets/hamburgueria.png" alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
           <h3>Hamburgueria</h3>
