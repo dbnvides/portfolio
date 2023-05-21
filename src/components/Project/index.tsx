@@ -11,6 +11,10 @@ import {
   ProjectLinkDeploy,
 } from "./style";
 
+import JuniorJobs from "../../assets/juniorJobs.png";
+import KenzieHub from "../../assets/KenzieHub.png";
+import Hamburgueria from "../../assets/hamburgueria.png";
+
 import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
 import { FaGithub, FaShare } from "react-icons/fa";
@@ -91,7 +95,7 @@ export const ProjectDeploy = (): JSX.Element => {
     <>
       <ProjectCard>
         <ProjectImage>
-          <img src="/src/assets/juniorJobs.png" alt="imagem do site" />
+          <img src={JuniorJobs} alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
           <h3>Junior Jobs</h3>
@@ -112,7 +116,7 @@ export const ProjectDeploy = (): JSX.Element => {
       </ProjectCard>
       <ProjectCard>
         <ProjectImage>
-          <img src="/src/assets/KenzieHub.png" alt="imagem do site" />
+          <img src={KenzieHub} alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
           <h3>KenzieHub</h3>
@@ -133,7 +137,7 @@ export const ProjectDeploy = (): JSX.Element => {
       </ProjectCard>
       <ProjectCard>
         <ProjectImage>
-          <img src="/src/assets/hamburgueria.png" alt="imagem do site" />
+          <img src={Hamburgueria} alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
           <h3>Hamburgueria</h3>

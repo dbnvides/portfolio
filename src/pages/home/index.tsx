@@ -11,6 +11,12 @@ import { Project, ProjectDeploy } from "@/components/Project";
 import { stackData } from "@/utils/stackData";
 import { userData } from "@/utils/userData";
 
+//img
+import Person from "../../assets/person.png";
+import JuniorJobs from "../../assets/juniorJobs.png";
+import KenzieHub from "../../assets/KenzieHub.png";
+import Hamburgueria from "../../assets/hamburgueria.png";
+
 // Page Style
 import {
   Header,
@@ -37,7 +43,7 @@ export const Home = (): JSX.Element => {
           <HeaderContent>
             <SectionMe>
               <HeaderImage>
-                <img src="/assets/person.png" alt="img" />
+                <img src={Person} alt="img" />
               </HeaderImage>
               <HeaderDescription>
                 <Text as="h2" type="heading2" color="grey5">
