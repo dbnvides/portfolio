@@ -37,7 +37,7 @@ export const Home = (): JSX.Element => {
           <HeaderContent>
             <SectionMe>
               <HeaderImage>
-                <img src="./src/assets/person.png" alt="img" />
+                <img src="/assets/person.png" alt="img" />
               </HeaderImage>
               <HeaderDescription>
                 <Text as="h2" type="heading2" color="grey5">
