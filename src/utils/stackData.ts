@@ -36,6 +36,5 @@ export const stackData = [
   },
   { title: "Python", img: FaPython },
   { title: "TypeScript", img: SiTypescript },
-  { title: "Next", img: TbBrandNextjs },
   { title: "Postgree", img: SiPostgresql },
 ];
