@@ -14,6 +14,7 @@ import {
 import JuniorJobs from "../../assets/juniorJobs.png";
 import KenzieHub from "../../assets/KenzieHub.png";
 import Hamburgueria from "../../assets/hamburgueria.png";
+import MotorsShop from "../../assets/motorshop.png"
 
 import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
@@ -95,6 +96,26 @@ export const ProjectDeploy = (): JSX.Element => {
     <>
       <ProjectCard>
         <ProjectImage>
+          <img src={MotorsShop} alt="imagem do site" />
+        </ProjectImage>
+        <ProjectContent>
+          <h3>MotorsShop</h3>
+          <p>
+            A aplicação consiste em um e-commerce voltado a compra e venda de automoveis, onde é possivel cadastrar dois tipos de usúarios, anunciante e comprador..{" "}
+          </p>
+          <ProjectAreaButtons>
+            <ProjectLinkDeploy target="_blank" href="https://frontend-ecommerce-cars.vercel.app/">
+              Aplicação
+            </ProjectLinkDeploy>
+            <ProjectLink target="_blank" href="https://github.com/dbnvides/frontend-ecommerce-cars?tab=readme-ov-file">
+              <FaGithub />
+              Repositório
+            </ProjectLink>
+          </ProjectAreaButtons>
+        </ProjectContent>
+      </ProjectCard>
+      <ProjectCard>
+        <ProjectImage>
           <img src={JuniorJobs} alt="imagem do site" />
         </ProjectImage>
         <ProjectContent>
@@ -128,7 +149,7 @@ export const ProjectDeploy = (): JSX.Element => {
             <ProjectLinkDeploy target="_blank" href="https://react-kenziehub.vercel.app/login">
               Aplicação
             </ProjectLinkDeploy>
-            <ProjectLink target="_blank" href="https://github.com/Project-Junior-Jobs/Junior-jobs">
+            <ProjectLink target="_blank" href="https://github.com/dbnvides/kenzie-hub">
               <FaGithub />
               Repositório
             </ProjectLink>
